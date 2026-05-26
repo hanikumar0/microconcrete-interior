@@ -18,7 +18,7 @@ The workspace is pre-configured with a dependency-free **local preview server** 
 ### 1. Launch the Preview Server
 Run the preview server from the root directory:
 ```bash
-node scripts/preview-server.mjs
+node server/script/preview-server.mjs
 ```
 
 ### 2. Access the Preview
@@ -89,14 +89,13 @@ Open your browser and navigate to:
 │   ├── middleware/              # Authentication, rate limiting, and errors
 │   ├── models/                  # Mongoose MongoDB schemas
 │   ├── routes/                  # API endpoints routes map
+│   ├── script/                  # Utility scripts & preview environments
+│   │   ├── generate_assets.py   # Helper script for media processing
+│   │   └── preview-server.mjs   # Zero-dependency preview environment
 │   ├── services/                # Business logic (Lead scoring)
 │   ├── uploads/                 # Target folder for file uploads
 │   ├── utils/                   # Shared helpers & fallback constants
 │   └── validators/              # Express-validator validation schemas
-│
-└── scripts/                     # Utility scripts
-    ├── generate_assets.py       # Helper script for media processing
-    └── preview-server.mjs       # Zero-dependency preview environment
 ```
 </details>
 
@@ -216,7 +215,7 @@ For advanced customization or review, consult these primary modules:
 *   **Data Validation Schemas:** [server/validators/](./server/validators/) — Holds robust input sanitizations.
 *   **Fallback Data Provider:** [server/utils/fallbackProjects.js](./server/utils/fallbackProjects.js) — Provides catalog fallbacks if DB connectivity is offline.
 *   **Project & Lead Models:** [server/models/Project.js](./server/models/Project.js) & [server/models/Lead.js](./server/models/Lead.js) — Direct schemas matching collections.
-*   **Preview Site Server:** [scripts/preview-server.mjs](./scripts/preview-server.mjs) — Complete lightweight fallback sandbox.
+*   **Preview Site Server:** [server/script/preview-server.mjs](./server/script/preview-server.mjs) — Complete lightweight fallback sandbox.
 
 ---
 
