@@ -7,3 +7,5 @@ npm-debug.log*
 .DS_Store
 preview.err.log
 preview.out.log
+.env.example
+
