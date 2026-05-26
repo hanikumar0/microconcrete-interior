@@ -1,9 +1,0 @@
-node_modules/
-golden-response/client/dist/
-golden-response/server/.env
-golden-response/client/.env
-.env
-npm-debug.log*
-.DS_Store
-preview.err.log
-preview.out.log

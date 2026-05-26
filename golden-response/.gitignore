@@ -1,0 +1,9 @@
+node_modules/
+client/dist/
+server/.env
+client/.env
+.env
+npm-debug.log*
+.DS_Store
+preview.err.log
+preview.out.log
