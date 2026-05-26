@@ -4,11 +4,11 @@
   "private": true,
   "description": "Premium full-stack MERN platform for a luxury microconcrete interior design studio.",
   "scripts": {
-    "install:all": "npm install && npm install --prefix client && npm install --prefix server",
-    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
-    "build": "npm run build --prefix client",
-    "start": "npm run start --prefix server",
-    "lint": "npm run lint --prefix client"
+    "install:all": "npm install && npm install --prefix golden-response/client && npm install --prefix golden-response/server",
+    "dev": "concurrently \"npm run dev --prefix golden-response/server\" \"npm run dev --prefix golden-response/client\"",
+    "build": "npm run build --prefix golden-response/client",
+    "start": "npm run start --prefix golden-response/server",
+    "lint": "npm run lint --prefix golden-response/client"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"

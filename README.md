@@ -18,7 +18,7 @@ The workspace is pre-configured with a dependency-free **local preview server** 
 ### 1. Launch the Preview Server
 Run the preview server from the root directory:
 ```bash
-node server/script/preview-server.mjs
+node golden-response/server/script/preview-server.mjs
 ```
 
 ### 2. Access the Preview
@@ -68,34 +68,35 @@ Open your browser and navigate to:
 <summary><b>Click to expand Directory Tree</b></summary>
 
 ```text
-├── client/                      # Frontend Application (Vite + React)
-│   ├── public/
-│   │   └── images/              # Static public assets
-│   └── src/
-│       ├── animations/          # Custom Framer Motion definitions
-│       ├── components/          # Reusable UI parts (Header, Footer, Form)
-│       ├── context/             # Global React state contexts
-│       ├── hooks/               # Custom hooks for theme & fetching
-│       ├── layouts/             # Grid & layout templates
-│       ├── pages/               # Routed views (Home, Services, Gallery)
-│       ├── routes/              # App routing tree
-│       ├── services/            # Client API client connectors
-│       ├── styles/              # Global Tailwind & base index.css
-│       └── utils/               # Gallery mock data and utilities
-│
-├── server/                      # Backend API (Node + Express)
-│   ├── config/                  # Database and server environment boots
-│   ├── controllers/             # Request handlers
-│   ├── middleware/              # Authentication, rate limiting, and errors
-│   ├── models/                  # Mongoose MongoDB schemas
-│   ├── routes/                  # API endpoints routes map
-│   ├── script/                  # Utility scripts & preview environments
-│   │   ├── generate_assets.py   # Helper script for media processing
-│   │   └── preview-server.mjs   # Zero-dependency preview environment
-│   ├── services/                # Business logic (Lead scoring)
-│   ├── uploads/                 # Target folder for file uploads
-│   ├── utils/                   # Shared helpers & fallback constants
-│   └── validators/              # Express-validator validation schemas
+└── golden-response/
+    ├── client/                  # Frontend Application (Vite + React)
+    │   ├── public/
+    │   │   └── images/          # Static public assets
+    │   └── src/
+    │       ├── animations/      # Custom Framer Motion definitions
+    │       ├── components/      # Reusable UI parts (Header, Footer, Form)
+    │       ├── context/         # Global React state contexts
+    │       ├── hooks/           # Custom hooks for theme & fetching
+    │       ├── layouts/         # Grid & layout templates
+    │       ├── pages/           # Routed views (Home, Services, Gallery)
+    │       ├── routes/          # App routing tree
+    │       ├── services/        # Client API client connectors
+    │       ├── styles/          # Global Tailwind & base index.css
+    │       └── utils/           # Gallery mock data and utilities
+    │
+    └── server/                  # Backend API (Node + Express)
+        ├── config/              # Database and server environment boots
+        ├── controllers/         # Request handlers
+        ├── middleware/          # Authentication, rate limiting, and errors
+        ├── models/              # Mongoose MongoDB schemas
+        ├── routes/              # API endpoints routes map
+        ├── script/              # Utility scripts & preview environments
+        │   ├── generate_assets.py # Helper script for media processing
+        │   └── preview-server.mjs # Zero-dependency preview environment
+        ├── services/            # Business logic (Lead scoring)
+        ├── uploads/             # Target folder for file uploads
+        ├── utils/               # Shared helpers & fallback constants
+        └── validators/          # Express-validator validation schemas
 ```
 </details>
 
@@ -114,10 +115,10 @@ npm run install:all
 ### 2. Configure Environment Files
 Clone the default environment template for the server:
 ```bash
-cp server/.env.example server/.env
+cp golden-response/server/.env.example golden-response/server/.env
 ```
 
-Open `server/.env` and update the database and host details:
+Open `golden-response/server/.env` and update the database and host details:
 ```env
 PORT=5000
 MONGO_URI=mongodb://127.0.0.1:27017/microconcrete_luxury
@@ -209,13 +210,13 @@ npm run dev
 ## Critical Architecture Files
 
 For advanced customization or review, consult these primary modules:
-*   **Gallery Assets Mapping:** [client/src/utils/galleryData.js](./client/src/utils/galleryData.js) — Houses portfolio metadata and high-res Unsplash links.
-*   **Lead Intake Component:** [client/src/components/ContactForm.jsx](./client/src/components/ContactForm.jsx) — Controls client validations and visual feedback.
-*   **Lead Scoring Engine:** [server/services/leadScoring.service.js](./server/services/leadScoring.service.js) — Algorithms that score leads based on timeline, budget, and scope.
-*   **Data Validation Schemas:** [server/validators/](./server/validators/) — Holds robust input sanitizations.
-*   **Fallback Data Provider:** [server/utils/fallbackProjects.js](./server/utils/fallbackProjects.js) — Provides catalog fallbacks if DB connectivity is offline.
-*   **Project & Lead Models:** [server/models/Project.js](./server/models/Project.js) & [server/models/Lead.js](./server/models/Lead.js) — Direct schemas matching collections.
-*   **Preview Site Server:** [server/script/preview-server.mjs](./server/script/preview-server.mjs) — Complete lightweight fallback sandbox.
+*   **Gallery Assets Mapping:** [golden-response/client/src/utils/galleryData.js](./golden-response/client/src/utils/galleryData.js) — Houses portfolio metadata and high-res Unsplash links.
+*   **Lead Intake Component:** [golden-response/client/src/components/ContactForm.jsx](./golden-response/client/src/components/ContactForm.jsx) — Controls client validations and visual feedback.
+*   **Lead Scoring Engine:** [golden-response/server/services/leadScoring.service.js](./golden-response/server/services/leadScoring.service.js) — Algorithms that score leads based on timeline, budget, and scope.
+*   **Data Validation Schemas:** [golden-response/server/validators/](./golden-response/server/validators/) — Holds robust input sanitizations.
+*   **Fallback Data Provider:** [golden-response/server/utils/fallbackProjects.js](./golden-response/server/utils/fallbackProjects.js) — Provides catalog fallbacks if DB connectivity is offline.
+*   **Project & Lead Models:** [golden-response/server/models/Project.js](./golden-response/server/models/Project.js) & [golden-response/server/models/Lead.js](./golden-response/server/models/Lead.js) — Direct schemas matching collections.
+*   **Preview Site Server:** [golden-response/server/script/preview-server.mjs](./golden-response/server/script/preview-server.mjs) — Complete lightweight fallback sandbox.
 
 ---
 
